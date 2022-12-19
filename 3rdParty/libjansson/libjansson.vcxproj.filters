@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\dump.c" />
+    <ClCompile Include="src\error.c" />
+    <ClCompile Include="src\hashtable.c" />
+    <ClCompile Include="src\hashtable_seed.c" />
+    <ClCompile Include="src\load.c" />
+    <ClCompile Include="src\memory.c" />
+    <ClCompile Include="src\pack_unpack.c" />
+    <ClCompile Include="src\strbuffer.c" />
+    <ClCompile Include="src\strconv.c" />
+    <ClCompile Include="src\utf.c" />
+    <ClCompile Include="src\value.c" />
+    <ClCompile Include="src\version.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\hashtable.h" />
+    <ClInclude Include="src\jansson.h" />
+    <ClInclude Include="src\jansson_private.h" />
+    <ClInclude Include="src\lookup3.h" />
+    <ClInclude Include="src\strbuffer.h" />
+    <ClInclude Include="src\utf.h" />
+    <ClInclude Include="src\jansson_private_config.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\jansson.def" />
+    <None Include="src\jansson_config.h" />
+  </ItemGroup>
+</Project>

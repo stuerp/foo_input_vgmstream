@@ -1,0 +1,82 @@
+#include "Resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+#include <afxres.h>
+#undef APSTUDIO_READONLY_SYMBOLS
+
+language LANG_ENGLISH, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+IDD_CONFIG DIALOGEX 0, 0, 187, 156
+style DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+font 8, "MS Shell Dlg", 400, 0, 0x0
+{
+    LTEXT           "Loop Count",IDC_STATIC,7,10,44,12
+    EDITTEXT        IDC_LOOP_COUNT,52,7,39,14,ES_AUTOHSCROLL
+
+    LTEXT           "Fade Length",IDC_STATIC,7,25,41,8
+    EDITTEXT        IDC_FADE_SECONDS,52,23,39,14,ES_AUTOHSCROLL
+    LTEXT           "seconds",IDC_STATIC,93,25,29,11
+
+    LTEXT           "Fade Delay",IDC_STATIC,7,40,41,8
+    EDITTEXT        IDC_FADE_DELAY_SECONDS,52,38,39,14,ES_AUTOHSCROLL
+    LTEXT           "seconds",IDC_STATIC,93,40,29,11
+
+    CONTROL         "Loop normally",IDC_LOOP_NORMALLY,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,7,57,77,10
+    CONTROL         "Loop forever",IDC_LOOP_FOREVER,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,7,70,77,10
+    CONTROL         "Ignore looping",IDC_IGNORE_LOOP,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,7,83,77,10
+
+    CONTROL         "Disable subsongs",IDC_DISABLE_SUBSONGS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,99,87,10
+
+    LTEXT           "Downmix",IDC_STATIC,7,115,48,12
+    EDITTEXT        IDC_DOWNMIX_CHANNELS,52,112,37,14,ES_AUTOHSCROLL
+
+    CONTROL         "Disable tagfile",IDC_TAGFILE_DISABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,131,87,10
+
+    CONTROL         "Override title",IDC_OVERRIDE_TITLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,147,97,10
+    
+    CONTROL         "Enable unknown exts",IDC_EXTS_UNKNOWN_ON,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,163,87,10
+    
+    CONTROL         "Enable common exts",IDC_EXTS_COMMON_ON,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,179,87,10
+}
+
+IDD_CONFIG AFX_DIALOG_LAYOUT
+{
+    0
+}
+
+VS_VERSION_INFO versioninfo
+fileversion     NUM_FILE_MAJOR,    NUM_FILE_MINOR,    NUM_FILE_PATCH,    NUM_FILE_PRERELEASE
+productversion  NUM_PRODUCT_MAJOR, NUM_PRODUCT_MINOR, NUM_PRODUCT_PATCH, NUM_PRODUCT_PRERELEASE
+fileflagsmask   0x3FL
+#ifdef _DEBUG
+fileflags       VS_FF_DEBUG
+#else
+fileflags       0
+#endif
+fileos          VOS_NT_WINDOWS32
+filetype        VFT_APP
+filesubtype     0x0L
+{
+    block "StringFileInfo"
+    {
+        block "040904E4" // U.S. English, Multilingual character set
+        {
+            value "FileVersion",      STR_FILE_VERSION     "\0"
+            value "FileDescription",  STR_FILE_DESCRIPTION "\0"
+            value "LegalCopyright",   STR_COPYRIGHT        "\0"
+            value "LegalTrademarks",                       "\0"
+            value "Comments",         STR_COMMENTS         "\0"
+            value "CompanyName",      STR_COMPANY_NAME     "\0"
+            value "InternalName",     STR_INTERNAL_NAME    "\0"
+            value "OriginalFilename", STR_FILE_NAME        "\0"
+            value "ProductName",      STR_PRODUCT_NAME     "\0"
+            value "ProductVersion",   STR_PRODUCT_VERSION  "\0"
+        }
+    }
+
+    block "VarFileInfo"
+    {
+        value "Translation", 0x409, 1252    // U.S. English, Multilingual character set
+    }
+}
