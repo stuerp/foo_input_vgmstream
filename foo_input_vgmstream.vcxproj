@@ -255,39 +255,6 @@
     <ProjectReference Include="..\sdk\pfc\pfc.vcxproj">
       <Project>{dfeba0e0-bc1c-42e5-99c5-15187eff0f68}</Project>
     </ProjectReference>
-    <ProjectReference Include="3rdParty\ext_libs_x64\ext_libs_x64.vcxproj">
-      <Project>{2a8ec271-b065-4918-9123-25e7224fe179}</Project>
-    </ProjectReference>
-    <ProjectReference Include="3rdParty\libatrac9\C\libatrac9.vcxproj">
-      <Project>{2425f2cc-bb1b-4069-bc10-1c7f535ef8e8}</Project>
-    </ProjectReference>
-    <ProjectReference Include="3rdParty\libcelt0061\libcelt\libcelt0061.vcxproj">
-      <Project>{245603e3-f580-41a5-9632-b25fe3372cbf}</Project>
-    </ProjectReference>
-    <ProjectReference Include="3rdParty\libcelt0110\libcelt\libcelt0110.vcxproj">
-      <Project>{cc71d852-dc74-4bad-90dd-7cb57db982d1}</Project>
-    </ProjectReference>
-    <ProjectReference Include="3rdParty\libg719_decode\libg719.vcxproj">
-      <Project>{82f4986a-b8da-4ad3-981a-4d26cc94a88e}</Project>
-    </ProjectReference>
-    <ProjectReference Include="3rdParty\libjansson\libjansson.vcxproj">
-      <Project>{3fd77662-9a66-4609-9bf8-b02568db3a61}</Project>
-    </ProjectReference>
-    <ProjectReference Include="3rdParty\libogg\win32\VS2015\libogg.vcxproj">
-      <Project>{aff27a26-c088-444b-bc2a-0ba94a02afa7}</Project>
-    </ProjectReference>
-    <ProjectReference Include="3rdParty\libspeex\win32\VS2022\libspeex\libspeex.vcxproj">
-      <Project>{e972c52f-9e85-4d65-b19c-031e511e9db4}</Project>
-    </ProjectReference>
-    <ProjectReference Include="3rdParty\libvorbis\win32\VS2022\libvorbisfile\libvorbisfile_static.vcxproj">
-      <Project>{cebde98b-a6aa-46e6-bc79-faaf823db9ec}</Project>
-    </ProjectReference>
-    <ProjectReference Include="3rdParty\libvorbis\win32\VS2022\libvorbis\libvorbis_static.vcxproj">
-      <Project>{3a214e06-b95e-4d61-a291-1f8df2ec10fd}</Project>
-    </ProjectReference>
-    <ProjectReference Include="3rdParty\src\libvgmstream.vcxproj">
-      <Project>{54a6ad11-5369-4895-a06f-e255abb99b11}</Project>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitattributes" />
