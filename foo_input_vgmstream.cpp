@@ -19,9 +19,9 @@ extern "C"
 #define VGMSTREAM_VERSION "unknown version " __DATE__
 #endif
 
-#define PLUGIN_NAME  STR_COMPONENT_NAME
-#define PLUGIN_VERSION  "0.0.1.0"
-#define PLUGIN_INFO  PLUGIN_NAME " " PLUGIN_VERSION " (" __DATE__ ")"
+#define PLUGIN_NAME         STR_COMPONENT_NAME
+#define PLUGIN_VERSION      STR_COMPONENT_VERSION
+#define PLUGIN_INFO         PLUGIN_NAME " " PLUGIN_VERSION " (" __DATE__ ")"
 #define PLUGIN_DESCRIPTION  PLUGIN_INFO "\n" \
     "by hcs, FastElbja, manakoAT, bxaimc, snakemeat, soneek, kode54, bnnm, Nicknine, Thealexbarney, CyberBotX, and many others\n" \
     "\n" \
@@ -29,8 +29,6 @@ extern "C"
     "\n" \
     "https://github.com/vgmstream/vgmstream/\n" \
     "https://sourceforge.net/projects/vgmstream/ (original)"
-
-#define PLUGIN_FILENAME STR_COMPONENT_FILENAME
 
 static void log_callback(int level, const char * str) noexcept
 {
@@ -584,4 +582,5 @@ bool input_vgmstream::g_is_low_merit()
 static input_factory_t<input_vgmstream> g_input_vgmstream_factory;
 
 DECLARE_COMPONENT_VERSION(PLUGIN_NAME, PLUGIN_VERSION, PLUGIN_DESCRIPTION);
-VALIDATE_COMPONENT_FILENAME(PLUGIN_FILENAME);
+
+VALIDATE_COMPONENT_FILENAME(STR_COMPONENT_FILENAME);
