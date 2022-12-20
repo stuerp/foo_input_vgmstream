@@ -137,7 +137,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>../3rdParty/WTL10_10320/Include;../sdk/foobar2000/sdk;../sdk/foobar2000/shared;../sdk/foobar2000;../sdk;3rdParty;..;$(DependenciesDir)/qaac/mp4v2/include;$(DependenciesDir)/fdk-aac/libSYS/include;$(DependenciesDir)/fdk-aac/libAACdec/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>VGMSTREAM_VERSION_AUTO;IN_VGMSTREAM_EXPORTS;WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>VGMSTREAM_VERSION_AUTO;WIN32;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>EnableAllWarnings</WarningLevel>
@@ -147,6 +147,7 @@
       <DisableAnalyzeExternal>true</DisableAnalyzeExternal>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <ConformanceMode>true</ConformanceMode>
+      <DisableSpecificWarnings>5045; 26481</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <AdditionalDependencies>../sdk/foobar2000/shared/shared-$(Platform).lib;3rdParty/ext_libs_x64/avcodec-59.lib;3rdParty/ext_libs_x64/avformat-59.lib;3rdParty/ext_libs_x64/avutil-57.lib;3rdParty/ext_libs_x64/libmpg123-0.lib;3rdParty/ext_libs_x64/swresample-4.lib;%(AdditionalDependencies)</AdditionalDependencies>

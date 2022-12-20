@@ -24,7 +24,7 @@ static cfg_bool     cfg_ExtsUnknownOn({ 0xd92dc6a2,0x9683,0x422d,{0x8e,0xd1,0x59
 static cfg_bool     cfg_ExtsCommonOn({ 0x405af423,0x5037,0x4eae,{0xa6,0xe3,0x72,0xd0,0x12,0x7d,0x84,0x6c} }, DEFAULT_EXTS_COMMON_ON);
 
 // Needs to be here in order to access the static config.
-void input_vgmstream::load_settings()
+void input_vgmstream::load_settings() noexcept
 {
     // no verification needed here, as it is done below
     (void)sscanf(cfg_FadeLength.get_ptr(), "%lf", &fade_seconds);

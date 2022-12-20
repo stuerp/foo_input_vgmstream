@@ -12,7 +12,7 @@ extern "C"
 class input_vgmstream : public input_stubs
 {
 public:
-    input_vgmstream();
+    input_vgmstream() noexcept;
     ~input_vgmstream();
 
     void open(service_ptr_t<file> p_filehint, const char * p_path, t_input_open_reason p_reason, abort_callback & p_abort);
@@ -80,7 +80,7 @@ private:
       /* helpers */
     VGMSTREAM * init_vgmstream_foo(t_uint32 p_subsong, const char * const filename, abort_callback & p_abort);
     void setup_vgmstream(abort_callback & p_abort);
-    void load_settings();
+    void load_settings() noexcept;
     void get_subsong_info(t_uint32 p_subsong, pfc::string_base & title, int * length_in_ms, int * total_samples, int * loop_flag, int * loop_start, int * loop_end, int * sample_rate, int * channels, int * bitrate, pfc::string_base & description, abort_callback & p_abort);
     bool get_description_tag(pfc::string_base & temp, pfc::string_base const & description, const char * tag, char delimiter = '\n');
     void apply_config(VGMSTREAM * vgmstream);

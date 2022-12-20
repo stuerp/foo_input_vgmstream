@@ -20,7 +20,7 @@ extern "C"
 #endif
 
 #define PLUGIN_NAME  STR_COMPONENT_NAME
-#define PLUGIN_VERSION  VGMSTREAM_VERSION
+#define PLUGIN_VERSION  "0.0.1.0"
 #define PLUGIN_INFO  PLUGIN_NAME " " PLUGIN_VERSION " (" __DATE__ ")"
 #define PLUGIN_DESCRIPTION  PLUGIN_INFO "\n" \
     "by hcs, FastElbja, manakoAT, bxaimc, snakemeat, soneek, kode54, bnnm, Nicknine, Thealexbarney, CyberBotX, and many others\n" \
@@ -38,7 +38,7 @@ static void log_callback(int level, const char * str) noexcept
 }
 
 // called every time a file is added to the playlist (to get info) or when playing
-input_vgmstream::input_vgmstream()
+input_vgmstream::input_vgmstream() noexcept
 {
     vgmstream = nullptr;
     subsong = 0; // 0 = not set, will be properly changed on first setup_vgmstream
@@ -260,12 +260,12 @@ void input_vgmstream::get_info(t_uint32 p_subsong, file_info & p_info, abort_cal
 
 }
 
-t_filestats input_vgmstream::get_file_stats(abort_callback & p_abort)
+t_filestats input_vgmstream::get_file_stats(abort_callback &)
 {
     return stats;
 }
 
-t_filestats2 input_vgmstream::get_stats2(uint32_t f, abort_callback & a)
+t_filestats2 input_vgmstream::get_stats2(uint32_t, abort_callback &)
 {
     return stats2;
 }
@@ -291,7 +291,7 @@ void input_vgmstream::decode_initialize(t_uint32 p_subsong, unsigned p_flags, ab
 };
 
 // called when audio buffer needs to be filled
-bool input_vgmstream::decode_run(audio_chunk & p_chunk, abort_callback & p_abort)
+bool input_vgmstream::decode_run(audio_chunk & p_chunk, abort_callback &)
 {
     if (!decoding) return false;
     if (!vgmstream) return false;
@@ -330,7 +330,7 @@ bool input_vgmstream::decode_run(audio_chunk & p_chunk, abort_callback & p_abort
 }
 
 // called when seeking
-void input_vgmstream::decode_seek(double p_seconds, abort_callback & p_abort)
+void input_vgmstream::decode_seek(double p_seconds, abort_callback &)
 {
     int32_t seek_sample = (int) audio_math::time_to_samples(p_seconds, vgmstream->sample_rate);
     bool play_forever = vgmstream_get_play_forever(vgmstream);
@@ -351,25 +351,30 @@ bool input_vgmstream::decode_can_seek()
 {
     return true;
 }
-bool input_vgmstream::decode_get_dynamic_info(file_info & p_out, double & p_timestamp_delta)
+
+bool input_vgmstream::decode_get_dynamic_info(file_info &, double &)
 {
     return false;
 }
-bool input_vgmstream::decode_get_dynamic_info_track(file_info & p_out, double & p_timestamp_delta)
+
+bool input_vgmstream::decode_get_dynamic_info_track(file_info &, double &)
 {
     return false;
 }
-void input_vgmstream::decode_on_idle(abort_callback & p_abort)
+
+void input_vgmstream::decode_on_idle(abort_callback &)
 {/*m_file->on_idle(p_abort);*/
 }
 
-void input_vgmstream::retag_set_info(t_uint32 p_subsong, const file_info & p_info, abort_callback & p_abort)
+void input_vgmstream::retag_set_info(t_uint32 p_subsong, const file_info &, abort_callback &)
 { /*throw exception_io_data();*/
 }
-void input_vgmstream::retag_commit(abort_callback & p_abort)
+
+void input_vgmstream::retag_commit(abort_callback &)
 { /*throw exception_io_data();*/
 }
-void input_vgmstream::remove_tags(abort_callback & p_abort)
+
+void input_vgmstream::remove_tags(abort_callback &)
 { /*throw exception_io_data();*/
 }
 

@@ -87,6 +87,10 @@ v0.1.0.0, 2022-12-19, *"Scratchin' the itch"*
 * [vgmstream](https://github.com/vgmstream), for the [vgmstream](https://github.com/vgmstream/vgmstream) library.
 * [kode54](https://gitlab.com/kode54), for the original [foo_input_vgmstream](https://gitlab.com/kode54/vgmstream) component.
 
+## Reference Material
+
+* [vgmstream documenation](https://vgmstream.org/)
+
 ## Links
 
 * Home page: https://github.com/stuerp/foo_input_vgmstream
