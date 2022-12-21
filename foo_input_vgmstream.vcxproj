@@ -38,7 +38,6 @@
     </SccLocalPath>
     <SccProvider>
     </SccProvider>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -135,9 +134,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>../3rdParty/WTL10_10320/Include;../sdk/foobar2000/sdk;../sdk/foobar2000/shared;../sdk/foobar2000;../sdk;3rdParty;3rdParty/vgmstream;..;$(DependenciesDir)/qaac/mp4v2/include;$(DependenciesDir)/fdk-aac/libSYS/include;$(DependenciesDir)/fdk-aac/libAACdec/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>VGMSTREAM_VERSION_AUTO;WIN32;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>EnableAllWarnings</WarningLevel>
@@ -147,10 +145,12 @@
       <DisableAnalyzeExternal>true</DisableAnalyzeExternal>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <ConformanceMode>true</ConformanceMode>
-      <DisableSpecificWarnings>5045; 26481</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4710;4711;4820;5045;26481;26485;26493</DisableSpecificWarnings>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>../sdk/foobar2000/shared/shared-$(Platform).lib;3rdParty/vgmstream/ext_libs_x64/avcodec-59.lib;3rdParty/vgmstream/ext_libs_x64/avformat-59.lib;3rdParty/vgmstream/ext_libs_x64/avutil-57.lib;3rdParty/vgmstream/ext_libs_x64/libmpg123-0.lib;3rdParty/vgmstream/ext_libs_x64/swresample-4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>../sdk/foobar2000/shared/shared-$(Platform).lib;3rdParty/ffmpeg/avcodec-59.lib;3rdParty/ffmpeg/avformat-59.lib;3rdParty/ffmpeg/avutil-57.lib;3rdParty/ffmpeg/libmpg123-0.lib;3rdParty/ffmpeg/swresample-4.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>"3rdParty\vgmstream\version-make.bat"</Command>
@@ -198,7 +198,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>../3rdParty/WTL10_10320/Include;../sdk/foobar2000/sdk;../sdk/foobar2000/shared;../sdk/foobar2000;../sdk;3rdParty;3rdParty/vgmstream;..;$(DependenciesDir)/qaac/mp4v2/include;$(DependenciesDir)/fdk-aac/libSYS/include;$(DependenciesDir)/fdk-aac/libAACdec/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>VGMSTREAM_VERSION_AUTO;WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>EnableAllWarnings</WarningLevel>
@@ -207,9 +207,10 @@
       <TreatAngleIncludeAsExternal>true</TreatAngleIncludeAsExternal>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <DisableAnalyzeExternal>true</DisableAnalyzeExternal>
+      <DisableSpecificWarnings>4710;4711;4820;5045;26481;26485;26493</DisableSpecificWarnings>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>../sdk/foobar2000/shared/shared-$(Platform).lib;3rdParty/vgmstream/ext_libs_x64/avcodec-59.lib;3rdParty/vgmstream/ext_libs_x64/avformat-59.lib;3rdParty/vgmstream/ext_libs_x64/avutil-57.lib;3rdParty/vgmstream/ext_libs_x64/libmpg123-0.lib;3rdParty/vgmstream/ext_libs_x64/swresample-4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>../sdk/foobar2000/shared/shared-$(Platform).lib;3rdParty/ffmpeg/avcodec-59.lib;3rdParty/ffmpeg/avformat-59.lib;3rdParty/ffmpeg/avutil-57.lib;3rdParty/ffmpeg/libmpg123-0.lib;3rdParty/ffmpeg/swresample-4.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>
@@ -232,17 +233,18 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="foo_filetypes.h" />
-    <ClInclude Include="foo_prefs.h" />
+    <ClInclude Include="FileTypeRegistrar.h" />
+    <ClInclude Include="Preferences.h" />
     <ClInclude Include="foo_input_vgmstream.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="StreamFile.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="foo_input_vgmstream.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="foo_prefs.cpp" />
-    <ClCompile Include="foo_streamfile.cpp" />
+    <ClCompile Include="Preferences.cpp" />
+    <ClCompile Include="StreamFile.cpp" />
     <ClCompile Include="foo_input_vgmstream.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -261,14 +263,17 @@
     <ProjectReference Include="..\sdk\pfc\pfc.vcxproj">
       <Project>{dfeba0e0-bc1c-42e5-99c5-15187eff0f68}</Project>
     </ProjectReference>
-    <ProjectReference Include="3rdParty\libatrac9\C\libatrac9.vcxproj">
-      <Project>{2425f2cc-bb1b-4069-bc10-1c7f535ef8e8}</Project>
+    <ProjectReference Include="3rdParty\ffmpeg\ffmpeg.vcxproj">
+      <Project>{2a8ec271-b065-4918-9123-25e7224fe179}</Project>
     </ProjectReference>
-    <ProjectReference Include="3rdParty\libcelt0061\libcelt\libcelt0061.vcxproj">
-      <Project>{245603e3-f580-41a5-9632-b25fe3372cbf}</Project>
+    <ProjectReference Include="3rdParty\libatrac9\libatrac9.vcxproj">
+      <Project>{647184e4-1025-4df4-b8bf-f170b925158c}</Project>
     </ProjectReference>
-    <ProjectReference Include="3rdParty\libcelt0110\libcelt\libcelt0110.vcxproj">
-      <Project>{cc71d852-dc74-4bad-90dd-7cb57db982d1}</Project>
+    <ProjectReference Include="3rdParty\libcelt\libcelt0061.vcxproj">
+      <Project>{df1238a4-0471-4973-9a93-a5ba72ff9fd5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="3rdParty\libcelt\libcelt0110.vcxproj">
+      <Project>{bee9146b-7751-45b0-94b1-2fc831afb7d4}</Project>
     </ProjectReference>
     <ProjectReference Include="3rdParty\libg719\libg719.vcxproj">
       <Project>{82f4986a-b8da-4ad3-981a-4d26cc94a88e}</Project>
@@ -276,20 +281,14 @@
     <ProjectReference Include="3rdParty\libjansson\libjansson.vcxproj">
       <Project>{3fd77662-9a66-4609-9bf8-b02568db3a61}</Project>
     </ProjectReference>
-    <ProjectReference Include="3rdParty\libogg\win32\VS2015\libogg.vcxproj">
-      <Project>{aff27a26-c088-444b-bc2a-0ba94a02afa7}</Project>
+    <ProjectReference Include="3rdParty\libogg\libogg.vcxproj">
+      <Project>{3bae21ad-a4a5-4ae0-b917-955ee170d09c}</Project>
     </ProjectReference>
-    <ProjectReference Include="3rdParty\libspeex\win32\VS2022\libspeex\libspeex.vcxproj">
-      <Project>{e972c52f-9e85-4d65-b19c-031e511e9db4}</Project>
+    <ProjectReference Include="3rdParty\libspeex\libspeex.vcxproj">
+      <Project>{e6239980-d2dd-4160-b871-bafb63ab8d10}</Project>
     </ProjectReference>
-    <ProjectReference Include="3rdParty\libvorbis\win32\VS2022\libvorbisfile\libvorbisfile_static.vcxproj">
-      <Project>{cebde98b-a6aa-46e6-bc79-faaf823db9ec}</Project>
-    </ProjectReference>
-    <ProjectReference Include="3rdParty\libvorbis\win32\VS2022\libvorbis\libvorbis_static.vcxproj">
-      <Project>{3a214e06-b95e-4d61-a291-1f8df2ec10fd}</Project>
-    </ProjectReference>
-    <ProjectReference Include="3rdParty\vgmstream\ext_libs_x64\ext_libs_x64.vcxproj">
-      <Project>{2a8ec271-b065-4918-9123-25e7224fe179}</Project>
+    <ProjectReference Include="3rdParty\libvorbis\libvorbis.vcxproj">
+      <Project>{8ca40d43-5863-4ddd-b081-b12393a02d50}</Project>
     </ProjectReference>
     <ProjectReference Include="3rdParty\vgmstream\src\libvgmstream.vcxproj">
       <Project>{54a6ad11-5369-4895-a06f-e255abb99b11}</Project>

@@ -31,7 +31,6 @@ static const char* extension_list[] = {
     "800",
     "9tav",
 
-    "a3c", //txth/reserved [Puyo Puyo 20th Anniversary (PSP)]
     //"aac", //common
     "aa3", //FFmpeg/not parsed (ATRAC3/ATRAC3PLUS/MP3/LPCM/WMA)
     "aax",
@@ -57,6 +56,7 @@ static const char* extension_list[] = {
     "ahv",
     "ai",
     //"aif", //common
+    "aif-Loop",
     "aifc", //common?
     //"aiff", //common
     "aix",
@@ -649,7 +649,6 @@ static const char* extension_list[] = {
     "xen",
     "xma",
     "xma2",
-    "xms",
     "xmu",
     "xmv",
     "xnb",
@@ -1319,7 +1318,7 @@ static const meta_info meta_info_list[] = {
         {meta_WAVEBATCH,            "Firebrand Games WBAT header"},
         {meta_HD3_BD3,              "Sony HD3+BD3 header"},
         {meta_BNK_SONY,             "Sony BNK header"},
-        {meta_SSCF,                 "Square-Enix SSCF header"},
+        {meta_SCD_SSCF,             "Square-Enix SCD (SSCF) header"},
         {meta_DSP_VAG,              ".VAG DSP header"},
         {meta_DSP_ITL,              ".ITL DSP header"},
         {meta_A2M,                  "Artificial Mind & Movement A2M header"},

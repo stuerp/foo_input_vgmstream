@@ -153,7 +153,6 @@ int main(int argc, char *argv[]) {
         sha = json_object_get(data, "sha");
         if (!json_is_string(sha)) {
             fprintf(stderr, "error: commit %d: sha is not a string\n", (int)(i + 1));
-            json_decref(root);
             return 1;
         }
 

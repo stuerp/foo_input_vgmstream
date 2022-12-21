@@ -5,14 +5,16 @@
 
 /** Component specific **/
 
-#define STR_COMPONENT_NAME      "VGMStream"
+#define STR_COMPONENT_NAME      "VGMStream Player"
 #define STR_COMPONENT_VERSION   TOSTRING(NUM_PRODUCT_MAJOR) "." TOSTRING(NUM_PRODUCT_MINOR) "." TOSTRING(NUM_PRODUCT_PATCH) "." TOSTRING(NUM_PRODUCT_PRERELEASE)
 #define STR_COMPONENT_FILENAME  "foo_input_vgmstream.dll"
+
+/** Version resource **/
 
 #define STR_COMPANY_NAME        TEXT("")
 #define STR_INTERNAL_NAME       TEXT(STR_COMPONENT_NAME)
 #define STR_COMMENTS            TEXT("Written by Christopher Snowhill, Peter Stuer")
-#define STR_COPYRIGHT           TEXT("Copyright (C) 2003-2022. All rights reserved.")
+#define STR_COPYRIGHT           TEXT("Copyright (C) 2012-2022. All rights reserved.")
 
 #define NUM_FILE_MAJOR          0
 #define NUM_FILE_MINOR          1

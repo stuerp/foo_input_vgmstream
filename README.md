@@ -35,6 +35,14 @@ To build the code:
 * [Microsoft Visual Studio 2022 Community Edition](https://visualstudio.microsoft.com/downloads/)
 * [foobar2000 SDK](https://www.foobar2000.org/SDK)
 * [Windows Template Library (WTL)](https://github.com/Win32-WTL/WTL) 10.0.10320
+* [vgmstream](https://github.com/vgmstream/vgmstream)  r1800
+* [BtbN/ffmpeg-builds](https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2022-12-18-12-35/ffmpeg-N-109430-g7af947c0c0-win64-gpl-shared.zip)  Auto-Build 2022-12-18 12:35
+* [libatrac9](https://github.com/Thealexbarney/Libatrac9/)
+* [celt](https://gitlab.xiph.org/xiph/celt)
+* [jansson](https://github.com/akheron/jansson) 2.14
+* [ogg](https://github.com/xiph/ogg/) 1.3.5
+* [speex](https://gitlab.xiph.org/xiph/speex/) 1.2.1
+* [vorbis](https://github.com/xiph/vorbis/) 1.3.7
 
 To create the deployment package:
 
@@ -58,7 +66,7 @@ Create the following directory structure:
 * `bin` contains a portable version of foobar2000 64-bit for debugging purposes.
 * `bin/x86` contains a portable version of foobar2000 32-bit for debugging purposes.
 * `foo_input_vgmstream` contains the [Git](https://github.com/stuerp/foo_input_vgmstream) repository.
-* `foo_input_vgmstream/3rdParty` contains the [vgmstream](https://github.com/vgmstream/vgmstream.git) repository.
+* `foo_input_vgmstream/3rdParty/vgmstream` contains the [vgmstream](https://github.com/vgmstream/vgmstream.git) repository.
 * `out` receives a deployable version of the component.
 * `sdk` contains the foobar2000 SDK.
 
@@ -89,7 +97,14 @@ v0.1.0.0, 2022-12-19, *"Scratchin' the itch"*
 
 ## Reference Material
 
-* [vgmstream documenation](https://vgmstream.org/)
+* vgmstream [documentation](https://vgmstream.org/)
+
+* [Desktop app user interface](https://learn.microsoft.com/en-us/windows/win32/windows-application-ui-development)
+* [Windows User Experience Interaction Guidelines](https://learn.microsoft.com/en-us/windows/win32/uxguide/guidelines)
+* [Windows Controls](https://learn.microsoft.com/en-us/windows/win32/controls/window-controls)
+* [Control Library](https://learn.microsoft.com/en-us/windows/win32/controls/individual-control-info)
+* [Resource-Definition Statements](https://learn.microsoft.com/en-us/windows/win32/menurc/resource-definition-statements)
+* [Visuals, Layout](https://learn.microsoft.com/en-us/windows/win32/uxguide/vis-layout)
 
 ## Links
 

@@ -176,9 +176,6 @@
     <ClInclude Include="meta\sqex_streamfile.h">
       <Filter>meta\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="meta\sscf_encrypted.h">
-      <Filter>meta\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="meta\txth_streamfile.h">
       <Filter>meta\Header Files</Filter>
     </ClInclude>
@@ -1699,13 +1696,7 @@
     <ClCompile Include="meta\sqex_scd.c">
       <Filter>meta\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="meta\sscf.c">
-      <Filter>meta\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="meta\sqex_sead.c">
-      <Filter>meta\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="meta\sscf_encrypted.c">
       <Filter>meta\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="meta\sspr.c">
@@ -2016,6 +2007,9 @@
     </ClCompile>
     <ClCompile Include="meta\vab.c">
       <Filter>meta\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="meta\sqex_scd_sscf.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

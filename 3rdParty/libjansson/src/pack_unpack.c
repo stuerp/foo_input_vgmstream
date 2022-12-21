@@ -562,7 +562,8 @@ static int unpack_object(scanner_t *s, json_t *root, va_list *ap) {
         long unpacked = 0;
 
         if (gotopt || json_object_size(root) != key_set.size) {
-            json_object_keylen_foreach(root, key, key_len, value) {
+            json_object_foreach(root, key, value) {
+                key_len = strlen(key);
                 if (!hashtable_get(&key_set, key, key_len)) {
                     unpacked++;
 

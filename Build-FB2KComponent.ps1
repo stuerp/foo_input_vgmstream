@@ -37,36 +37,38 @@ function Install-Component
 {
     if (Test-Path -Path "../bin")
     {
-        Write-Host "Installing component in foobar2000 64-bit...";
-
-        $ProfilePath = "../bin/profile/user-components-x64/$TargetName";
-
-        if (!(Test-Path -Path $ProfilePath))
-        {
-            Write-Host "Creating output directory `"$ProfilePath`"...";
-            $null = New-Item -Path '../bin/profile/user-components-x64/' -Name "$TargetName" -ItemType 'directory';
-        }
-
+        # Install the 64-bit component if there is one.
         if (Test-Path -Path $PackagePath64)
         {
+            Write-Host "Installing component in foobar2000 64-bit...";
+
+            $ProfilePath = "../bin/profile/user-components-x64/$TargetName";
+
+            if (!(Test-Path -Path $ProfilePath))
+            {
+                Write-Host "Creating output directory `"$ProfilePath`"...";
+                $null = New-Item -Path '../bin/profile/user-components-x64/' -Name "$TargetName" -ItemType 'directory';
+            }
+
             Copy-Item "$PackagePath64/*" -Destination $ProfilePath -Force;
         }
     }
 
     if (Test-Path -Path "../bin/x86")
     {
-        Write-Host "Installing component in foobar2000 32-bit...";
-
-        $ProfilePath = "../bin/x86/profile/user-components/$TargetName";
-
-        if (!(Test-Path -Path $ProfilePath))
-        {
-            Write-Host "Creating output directory `"$ProfilePath`"...";
-            $null = New-Item -Path '../bin/x86/profile/user-components/' -Name "$TargetName" -ItemType 'directory';
-        }
-
+        # Install the 32-bit component if there is one.
         if (Test-Path -Path $PackagePath86)
         {
+            Write-Host "Installing component in foobar2000 32-bit...";
+
+            $ProfilePath = "../bin/x86/profile/user-components/$TargetName";
+
+            if (!(Test-Path -Path $ProfilePath))
+            {
+                Write-Host "Creating output directory `"$ProfilePath`"...";
+                $null = New-Item -Path '../bin/x86/profile/user-components/' -Name "$TargetName" -ItemType 'directory';
+            }
+
             Copy-Item "$PackagePath86/*" -Exclude "x64" -Destination $ProfilePath -Force;
         }
     }

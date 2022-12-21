@@ -5,14 +5,14 @@
  * it under the terms of the MIT license. See LICENSE for details.
  */
 
-#ifdef HAVE_CONFIG_H
+#if HAVE_CONFIG_H
 #include <jansson_private_config.h>
 #endif
 
 #include <stdlib.h>
 #include <string.h>
 
-#ifdef HAVE_STDINT_H
+#if HAVE_STDINT_H
 #include <stdint.h>
 #endif
 
