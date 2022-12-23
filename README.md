@@ -36,7 +36,8 @@ To build the code:
 * [foobar2000 SDK](https://www.foobar2000.org/SDK)
 * [Windows Template Library (WTL)](https://github.com/Win32-WTL/WTL) 10.0.10320
 * [vgmstream](https://github.com/vgmstream/vgmstream)  r1800
-* [BtbN/ffmpeg-builds](https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2022-12-18-12-35/ffmpeg-N-109430-g7af947c0c0-win64-gpl-shared.zip)  Auto-Build 2022-12-18 12:35
+* [BtbN/ffmpeg-builds](https://github.com/BtbN/FFmpeg-Builds/releases/tag/autobuild-2022-12-18-12-35) Auto-Build 2022-12-18 12:35
+* [mpg123](https://www.mpg123.de/download.shtml) 1.31.0
 * [libatrac9](https://github.com/Thealexbarney/Libatrac9/)
 * [celt](https://gitlab.xiph.org/xiph/celt)
 * [jansson](https://github.com/akheron/jansson) 2.14
