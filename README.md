@@ -7,14 +7,12 @@ It is based on [foo_input_vgmstream](https://gitlab.com/kode54/foo_input_vgmstre
 
 ## Features
 
-* Supports dark mode.
-
-* Compatible with foobar2000 1.6.13 and foobar2000 2.0 or later (32 and 64-bit version).
+* Compatible with foobar2000 2.0 or later (64-bit version only).
 
 ## Requirements
 
 * Tested on Microsoft Windows 10 or later.
-* [foobar2000](https://www.foobar2000.org/download) v1.6.13 or later. ![foobar2000](https://www.foobar2000.org/button-small.png)
+* [foobar2000](https://www.foobar2000.org/download) v2.0 or later. ![foobar2000](https://www.foobar2000.org/button-small.png)
 
 ## Getting started
 
@@ -58,8 +56,6 @@ Create the following directory structure:
     bin
         x86
     foo_input_vgmstream
-        3rdParty
-            vgmstream
     out
     sdk
 
@@ -67,7 +63,6 @@ Create the following directory structure:
 * `bin` contains a portable version of foobar2000 64-bit for debugging purposes.
 * `bin/x86` contains a portable version of foobar2000 32-bit for debugging purposes.
 * `foo_input_vgmstream` contains the [Git](https://github.com/stuerp/foo_input_vgmstream) repository.
-* `foo_input_vgmstream/3rdParty/vgmstream` contains the [vgmstream](https://github.com/vgmstream/vgmstream.git) repository.
 * `out` receives a deployable version of the component.
 * `sdk` contains the foobar2000 SDK.
 
@@ -85,6 +80,10 @@ If you'd like to contribute, please fork the repository and use a feature
 branch. Pull requests are warmly welcome.
 
 ## Change Log
+
+v0.1.0.2, 2022-12-19, *"Merry Christmas"*
+
+* Fixed the ffmpeg interface.
 
 v0.1.0.0, 2022-12-19, *"Scratchin' the itch"*
 
