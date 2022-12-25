@@ -74,10 +74,28 @@ function Install-Component
     }
 }
 
-Write-Host "Building package `"$TargetName`"...";
+Write-Host "Building package `"$TargetName`" for platform `"$Platform`"...";
+
+if ($Platform -eq 'Win32')
+{
+    $Platform = 'x86';
+}
 
 $PackagePath64 = "../out/$TargetName/x64";
 $PackagePath86 = "../out/$TargetName";
+
+$Files = @(
+    $TargetFileName,
+
+    "libatrac9.dll",
+
+    "avcodec-58.dll",
+    "avformat-58.dll",
+    "avutil-56.dll",
+    "swresample-3.dll",
+
+    "libmpg123-0.dll"
+);
 
 if ($Platform -eq 'x64')
 {
@@ -89,13 +107,16 @@ if ($Platform -eq 'x64')
 
     if (Test-Path -Path "$OutputPath/$TargetFileName")
     {
-        Write-Host "Copying $TargetFileName to `"$PackagePath64`"...";
-        Copy-Item "$OutputPath/$TargetFileName" -Destination "$PackagePath64";
+        $Files | ForEach-Object {
+            Write-Host "Copying $_ to `"$PackagePath86`"...";
+
+            Copy-Item "$OutputPath/$_" -Destination "$PackagePath64";
+        }
     }
 
     Install-Component;
 }
-elseif ($Platform -eq 'Win32')
+elseif ($Platform -eq 'x86')
 {
     if (!(Test-Path -Path $PackagePath86))
     {
@@ -105,8 +126,11 @@ elseif ($Platform -eq 'Win32')
 
     if (Test-Path -Path "$OutputPath/$TargetFileName")
     {
-        Write-Host "Copying $TargetFileName to `"$PackagePath86`"...";
-        Copy-Item "$OutputPath/$TargetFileName" -Destination "$PackagePath86";
+        $Files | ForEach-Object {
+            Write-Host "Copying $_ to `"$PackagePath86`"...";
+
+            Copy-Item "$OutputPath/$_" -Destination "$PackagePath86";
+        }
     }
 
     Install-Component;

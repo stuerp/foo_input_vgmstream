@@ -288,7 +288,7 @@ bool InputHandler::decode_run(audio_chunk & audioChunk, abort_callback &)
         const bool ShouldPlayForever = (::vgmstream_get_play_forever(_VGMStream) != 0);
 
         if ((_DecodePositionInSamples + SAMPLE_BUFFER_SIZE) > _LengthInSamples && !ShouldPlayForever)
-            SamplesToDo = _LengthInSamples - _DecodePositionInSamples;
+            SamplesToDo = _LengthInSamples - (size_t)_DecodePositionInSamples;
         else
             SamplesToDo = SAMPLE_BUFFER_SIZE;
 
@@ -313,7 +313,7 @@ bool InputHandler::decode_run(audio_chunk & audioChunk, abort_callback &)
         audioChunk.set_data_fixedpoint((char *) _SampleBuffer, ByteCount, (unsigned int)_VGMStream->sample_rate, _OutputChannelCount, 16, ChannelConfig);
 
         _DecodePositionInSamples += SamplesToDo;
-        _DecodePositionInMs = _DecodePositionInSamples * 1000LL / _VGMStream->sample_rate;
+        _DecodePositionInMs = _DecodePositionInSamples * (size_t)1000 / (size_t)_VGMStream->sample_rate;
     }
 
     return true;
@@ -322,7 +322,7 @@ bool InputHandler::decode_run(audio_chunk & audioChunk, abort_callback &)
 // called when seeking
 void InputHandler::decode_seek(double timeInSeconds, abort_callback &)
 {
-    size_t SeekPositionInSamples = audio_math::time_to_samples(timeInSeconds, (uint32_t)_VGMStream->sample_rate);
+    uint64_t SeekPositionInSamples = audio_math::time_to_samples(timeInSeconds, (uint32_t)_VGMStream->sample_rate);
 
     const bool ShouldPlayForever = (::vgmstream_get_play_forever(_VGMStream) != 0);
 

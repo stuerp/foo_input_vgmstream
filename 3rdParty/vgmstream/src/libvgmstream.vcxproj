@@ -87,25 +87,24 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../ext_includes;../ext_includes/ffmpeg;$(DependenciesDir)/qaac/mp4v2/include;$(DependenciesDir)/fdk-aac/libSYS/include;$(DependenciesDir)/fdk-aac/libAACdec/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../External/ffmpeg;../ext_includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;VGM_LOG_OUTPUT;VGM_USE_VORBIS;VGM_USE_MPEG;VGM_USE_FFMPEG;VGM_USE_G7221;VGM_USE_G719;VGM_USE_ATRAC9;VGM_USE_CELT;VGM_USE_SPEEX;USE_ALLOCA;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <TreatAngleIncludeAsExternal>true</TreatAngleIncludeAsExternal>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <DisableAnalyzeExternal>true</DisableAnalyzeExternal>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../ext_includes;../ext_includes/ffmpeg;$(DependenciesDir)/qaac/mp4v2/include;$(DependenciesDir)/fdk-aac/libSYS/include;$(DependenciesDir)/fdk-aac/libAACdec/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../External/ffmpeg;../ext_includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>VGM_LOG_OUTPUT;VGM_USE_VORBIS;VGM_USE_MPEG;VGM_USE_FFMPEG;VGM_USE_G7221;VGM_USE_G719;VGM_USE_ATRAC9;VGM_USE_CELT;VGM_USE_SPEEX;USE_ALLOCA;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <TreatAngleIncludeAsExternal>true</TreatAngleIncludeAsExternal>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <DisableAnalyzeExternal>true</DisableAnalyzeExternal>
@@ -113,24 +112,28 @@
       <ConformanceMode>true</ConformanceMode>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <SDLCheck>false</SDLCheck>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../ext_includes;../ext_includes/ffmpeg;$(DependenciesDir)/qaac/mp4v2/include;$(DependenciesDir)/fdk-aac/libSYS/include;$(DependenciesDir)/fdk-aac/libAACdec/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_WIN32_WINNT=0x501;WIN32;VGMSTREAM_VERSION_AUTO;VGM_LOG_OUTPUT;VGM_USE_VORBIS;VGM_USE_MPEG;VGM_USE_FFMPEG;VGM_USE_G7221;VGM_USE_G719;VGM_USE_ATRAC9;VGM_USE_CELT;VGM_USE_SPEEX;USE_ALLOCA;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <EnableEnhancedInstructionSet>NoExtensions</EnableEnhancedInstructionSet>
-      <FloatingPointModel>Fast</FloatingPointModel>
+      <AdditionalIncludeDirectories>../../External/ffmpeg;../ext_includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>VGM_LOG_OUTPUT;VGM_USE_VORBIS;VGM_USE_MPEG;VGM_USE_FFMPEG;VGM_USE_G7221;VGM_USE_G719;VGM_USE_ATRAC9;VGM_USE_CELT;VGM_USE_SPEEX;USE_ALLOCA;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <ConformanceMode>true</ConformanceMode>
+      <TreatAngleIncludeAsExternal>true</TreatAngleIncludeAsExternal>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <DisableAnalyzeExternal>true</DisableAnalyzeExternal>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../ext_includes;../ext_includes/ffmpeg;$(DependenciesDir)/qaac/mp4v2/include;$(DependenciesDir)/fdk-aac/libSYS/include;$(DependenciesDir)/fdk-aac/libAACdec/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../External/ffmpeg;../ext_includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>VGM_LOG_OUTPUT;VGM_USE_VORBIS;VGM_USE_MPEG;VGM_USE_FFMPEG;VGM_USE_G7221;VGM_USE_G719;VGM_USE_ATRAC9;VGM_USE_CELT;VGM_USE_SPEEX;USE_ALLOCA;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>
       </PrecompiledHeader>

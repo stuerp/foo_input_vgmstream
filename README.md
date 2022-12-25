@@ -7,12 +7,14 @@ It is based on [foo_input_vgmstream](https://gitlab.com/kode54/foo_input_vgmstre
 
 ## Features
 
-* Compatible with foobar2000 2.0 or later (64-bit version only).
+* Supports dark mode.
+
+* Compatible with foobar2000 1.6.14 and foobar2000 2.0 or later (32 and 64-bit version).
 
 ## Requirements
 
 * Tested on Microsoft Windows 10 or later.
-* [foobar2000](https://www.foobar2000.org/download) v2.0 or later. ![foobar2000](https://www.foobar2000.org/button-small.png)
+* [foobar2000](https://www.foobar2000.org/download) v1.6.13 or later. ![foobar2000](https://www.foobar2000.org/button-small.png)
 
 ## Getting started
 
@@ -33,8 +35,8 @@ To build the code:
 * [Microsoft Visual Studio 2022 Community Edition](https://visualstudio.microsoft.com/downloads/)
 * [foobar2000 SDK](https://www.foobar2000.org/SDK)
 * [Windows Template Library (WTL)](https://github.com/Win32-WTL/WTL) 10.0.10320
-* [vgmstream](https://github.com/vgmstream/vgmstream)  r1800
-* [BtbN/ffmpeg-builds](https://github.com/BtbN/FFmpeg-Builds/releases/tag/autobuild-2022-12-18-12-35) Auto-Build 2022-12-18 12:35
+* [vgmstream](https://github.com/vgmstream/vgmstream) r1800
+* [ffmpeg](https://vcpkg.io/en/packages.html) 4.4.1 built with [vcpkg](https://vcpkg.io/en/index.html)
 * [mpg123](https://www.mpg123.de/download.shtml) 1.31.0
 * [libatrac9](https://github.com/Thealexbarney/Libatrac9/)
 * [celt](https://gitlab.xiph.org/xiph/celt)
@@ -81,6 +83,13 @@ branch. Pull requests are warmly welcome.
 
 ## Change Log
 
+v1.0.0.0, 2022-12-31, *"Happy Newyear"*
+
+* Added x86 version for [foobar2000](https://www.foobar2000.org/) v2.0.
+* Added support for dark mode.
+* Cleaned up preference page a little bit.
+* Clean ffmpeg 4.4.1 build using [vcpkg](https://vcpkg.io/en/index.html).
+
 v0.1.0.2, 2022-12-19, *"Merry Christmas"*
 
 * Fixed the ffmpeg interface.
@@ -99,12 +108,16 @@ v0.1.0.0, 2022-12-19, *"Scratchin' the itch"*
 
 * vgmstream [documentation](https://vgmstream.org/)
 
-* [Desktop app user interface](https://learn.microsoft.com/en-us/windows/win32/windows-application-ui-development)
-* [Windows User Experience Interaction Guidelines](https://learn.microsoft.com/en-us/windows/win32/uxguide/guidelines)
-* [Windows Controls](https://learn.microsoft.com/en-us/windows/win32/controls/window-controls)
-* [Control Library](https://learn.microsoft.com/en-us/windows/win32/controls/individual-control-info)
-* [Resource-Definition Statements](https://learn.microsoft.com/en-us/windows/win32/menurc/resource-definition-statements)
-* [Visuals, Layout](https://learn.microsoft.com/en-us/windows/win32/uxguide/vis-layout)
+* vcpkg
+  * [Getting started](https://vcpkg.io/en/getting-started.html)
+
+* Windows User Interface
+  * [Desktop App User Interface](https://learn.microsoft.com/en-us/windows/win32/windows-application-ui-development)
+  * [Windows User Experience Interaction Guidelines](https://learn.microsoft.com/en-us/windows/win32/uxguide/guidelines)
+  * [Windows Controls](https://learn.microsoft.com/en-us/windows/win32/controls/window-controls)
+  * [Control Library](https://learn.microsoft.com/en-us/windows/win32/controls/individual-control-info)
+  * [Resource-Definition Statements](https://learn.microsoft.com/en-us/windows/win32/menurc/resource-definition-statements)
+  * [Visuals, Layout](https://learn.microsoft.com/en-us/windows/win32/uxguide/vis-layout)
 
 ## Links
 

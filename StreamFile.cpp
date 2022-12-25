@@ -35,7 +35,7 @@ struct StreamFile
     uint8_t * buf;              /* data buffer */
     size_t buf_size;            /* max buffer size */
     size_t valid_size;          /* current buffer size */
-    size_t file_size;           /* buffered file size */
+    t_filesize file_size;       /* buffered file size */
 };
 
 static STREAMFILE * open_foo_streamfile_buffer(const char * const filePath, size_t bufferSize, abort_callback * abortHandler, t_filestats * stats);
@@ -131,7 +131,7 @@ static size_t foo_read(StreamFile * sf, uint8_t * dst, offv_t offset, size_t len
 
 static size_t foo_get_size(StreamFile * sf)
 {
-    return sf->file_size;
+    return (size_t)sf->file_size;
 }
 
 static offv_t GetOffset(StreamFile * sf) noexcept

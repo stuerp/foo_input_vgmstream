@@ -3,6 +3,8 @@
 #include <foobar2000/helpers/foobar2000+atl.h>
 #include <foobar2000/helpers/atl-misc.h>
 
+#include <coreDarkMode.h>
+
 #include "Resource.h"
 
 #define DEFAULT_LOOP_COUNT "2.00"
@@ -64,6 +66,7 @@ private:
     bool HasChanged();
 
     const preferences_page_callback::ptr _PageCallback;
+    fb2k::CCoreDarkModeHooks _DarkModeHooks;
 };
 
 class PreferencesPage : public preferences_page_impl<PreferencesDialog>

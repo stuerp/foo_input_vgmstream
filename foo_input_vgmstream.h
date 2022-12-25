@@ -64,6 +64,8 @@ private:
     void ApplyVGMConfig(VGMSTREAM * vgmstream) noexcept;
 
 private:
+#pragma warning(push)
+#pragma warning(disable: 4820) // x bytes padding added after data member
     pfc::string8 _FilePath;
     t_filestats _Stats;
     t_filestats2 _Stats2;
@@ -78,8 +80,8 @@ private:
     int16_t _SampleBuffer[SAMPLE_BUFFER_SIZE * VGMSTREAM_MAX_CHANNELS];
     bool _IsDecoding;
     size_t _LengthInSamples;
-    size_t _DecodePositionInSamples;
-    size_t _DecodePositionInMs;
+    uint64_t _DecodePositionInSamples;
+    uint64_t _DecodePositionInMs;
 
     // Settings
     double _LoopCount;
@@ -91,5 +93,6 @@ private:
     int _DownmixChannelCount;
     bool _TagfileDisable;
     bool _OverrideTitle;
+#pragma warning(pop)
 };
 #pragma endregion

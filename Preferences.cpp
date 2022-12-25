@@ -64,12 +64,12 @@ void InputHandler::LoadConfig(int * acceptUnknownExtensions, int * acceptCommonE
 #pragma region("Preferences")
 t_uint32 PreferencesDialog::get_state()
 {
-    t_uint32 state = preferences_state::resettable;
+    t_uint32 State = preferences_state::resettable | preferences_state::dark_mode_supported;
 
     if (HasChanged())
-        state |= preferences_state::changed;
+        State |= preferences_state::changed;
 
-    return state;
+    return State;
 }
 
 void PreferencesDialog::reset() noexcept
@@ -195,6 +195,8 @@ BOOL PreferencesDialog::OnInitDialog(CWindow, LPARAM)
     CheckDlgButton(IDC_OVERRIDE_TITLE, (UINT)(cfg_OverrideTitle ? BST_CHECKED : BST_UNCHECKED));
     CheckDlgButton(IDC_EXTS_UNKNOWN_ON, (UINT)(cfg_AcceptUnknownExtensions ? BST_CHECKED : BST_UNCHECKED));
     CheckDlgButton(IDC_EXTS_COMMON_ON, (UINT)(cfg_AcceptCommonExtensions ? BST_CHECKED : BST_UNCHECKED));
+
+    _DarkModeHooks.AddDialogWithControls(*this);
 
     return TRUE;
 }
