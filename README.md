@@ -7,8 +7,8 @@ It is based on [foo_input_vgmstream](https://gitlab.com/kode54/foo_input_vgmstre
 
 ## Features
 
+* Plays all [formats](https://vgmstream.org/formats) and [codecs](https://vgmstream.org/formats#supported-codec-types) supported by [vgmstream](https://vgmstream.org/).
 * Supports dark mode.
-* PLays all [formats](https://vgmstream.org/formats) and [codecs](https://vgmstream.org/formats#supported-codec-types) supported by [vgmstream](https://vgmstream.org/).
 
 * Compatible with foobar2000 1.6.14 and foobar2000 2.0 or later (32 and 64-bit version).
 
@@ -84,7 +84,7 @@ branch. Pull requests are warmly welcome.
 
 ## Change Log
 
-v1.0.0.0, 2022-12-31, *"Happy Newyear"*
+v1.0.0.0, 2022-12-27, *"Happy Newyear"*
 
 * Added x86 version for [foobar2000](https://www.foobar2000.org/) v2.0.
 * Added support for dark mode.
