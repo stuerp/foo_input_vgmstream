@@ -87,8 +87,6 @@ $PackagePath86 = "../out/$TargetName";
 $Files = @(
     $TargetFileName,
 
-    "libatrac9.dll",
-
     "avcodec-58.dll",
     "avformat-58.dll",
     "avutil-56.dll",

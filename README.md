@@ -8,6 +8,7 @@ It is based on [foo_input_vgmstream](https://gitlab.com/kode54/foo_input_vgmstre
 ## Features
 
 * Supports dark mode.
+* PLays all [formats](https://vgmstream.org/formats) and [codecs](https://vgmstream.org/formats#supported-codec-types) supported by [vgmstream](https://vgmstream.org/).
 
 * Compatible with foobar2000 1.6.14 and foobar2000 2.0 or later (32 and 64-bit version).
 
@@ -87,8 +88,9 @@ v1.0.0.0, 2022-12-31, *"Happy Newyear"*
 
 * Added x86 version for [foobar2000](https://www.foobar2000.org/) v2.0.
 * Added support for dark mode.
-* Cleaned up preference page a little bit.
-* Clean ffmpeg 4.4.1 build using [vcpkg](https://vcpkg.io/en/index.html).
+* Cleaned up the preference page a little bit.
+* Switched to a clean ffmpeg 4.4.1 build using [vcpkg](https://vcpkg.io/en/index.html).
+* Converted libatrac9 to a link library.
 
 v0.1.0.2, 2022-12-19, *"Merry Christmas"*
 
