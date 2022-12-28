@@ -9,12 +9,11 @@ It is based on [foo_input_vgmstream](https://gitlab.com/kode54/foo_input_vgmstre
 
 * Plays all [formats](https://vgmstream.org/formats) and [codecs](https://vgmstream.org/formats#supported-codec-types) supported by [vgmstream](https://vgmstream.org/).
 * Supports dark mode.
-* Compatible with foobar2000 1.6.14 and foobar2000 2.0 or later (32 and 64-bit version).
 
 ## Requirements
 
 * Tested on Microsoft Windows 10 or later.
-* [foobar2000](https://www.foobar2000.org/download) v1.6.13 or later. ![foobar2000](https://www.foobar2000.org/button-small.png)
+* [foobar2000](https://www.foobar2000.org/download) v1.6.13 or later (32 or 64-bit). ![foobar2000](https://www.foobar2000.org/button-small.png)
 
 ## Getting started
 
@@ -30,10 +29,10 @@ The code builds out-of-the box with Visual Studio.
 
 ### Requirements
 
-To build the code:
+To build the code you need:
 
-* [Microsoft Visual Studio 2022 Community Edition](https://visualstudio.microsoft.com/downloads/)
-* [foobar2000 SDK](https://www.foobar2000.org/SDK)
+* [Microsoft Visual Studio 2022 Community Edition](https://visualstudio.microsoft.com/downloads/) or later
+* [foobar2000 SDK](https://www.foobar2000.org/SDK) 2022-20-20
 * [Windows Template Library (WTL)](https://github.com/Win32-WTL/WTL) 10.0.10320
 * [vgmstream](https://github.com/vgmstream/vgmstream) r1800
 * [ffmpeg](https://vcpkg.io/en/packages.html) 4.4.1 built with [vcpkg](https://vcpkg.io/en/index.html)
@@ -45,9 +44,9 @@ To build the code:
 * [speex](https://gitlab.xiph.org/xiph/speex/) 1.2.1
 * [vorbis](https://github.com/xiph/vorbis/) 1.3.7
 
-To create the deployment package:
+To create the deployment package you need:
 
-* [PowerShell 7.2](https://github.com/PowerShell/PowerShell)
+* [PowerShell 7.2](https://github.com/PowerShell/PowerShell) or later
 
 ### Setup
 
@@ -83,7 +82,7 @@ branch. Pull requests are warmly welcome.
 
 ## Change Log
 
-v1.0.0.0, 2022-12-27, *"Happy Newyear"*
+v1.0.0.0, 2022-12-27, *"Happy New Year"*
 
 * Added x86 version for [foobar2000](https://www.foobar2000.org/) v2.0.
 * Added support for dark mode.
