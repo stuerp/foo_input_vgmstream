@@ -615,12 +615,12 @@ static input_factory_t<InputHandler> _InputHandler;
 DECLARE_COMPONENT_VERSION(STR_COMPONENT_NAME, STR_COMPONENT_VERSION,
     STR_COMPONENT_FILENAME " " STR_COMPONENT_VERSION "\n"
     "\n"
-    "Adds a Preview playback mode.\n"
+    "Adds playback of streamed (prerecorded) video game audio.\n"
     "\n"
-    "Build with foobar2000 SDK " TOSTRING(FOOBAR2000_SDK_VERSION) ".\n"
-    "Build: " __TIME__ ", " __DATE__
+    "Build with foobar2000 SDK " TOSTRING(FOOBAR2000_SDK_VERSION) "\n"
+    "on " __DATE__ " " __TIME__ "\n"
     "\n"
-    "Using vgmstream " VGMSTREAM_VERSION
+    "Using vgmstream " VGMSTREAM_VERSION "\n"
     "by hcs, FastElbja, manakoAT, bxaimc, snakemeat, soneek, kode54, bnnm, Nicknine, Thealexbarney, CyberBotX, and many others\n"
     "\n"
     "Original foobar2000 plugin by Josh W, kode54, others\n"
