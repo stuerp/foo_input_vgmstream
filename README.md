@@ -9,7 +9,6 @@ It is based on [foo_input_vgmstream](https://gitlab.com/kode54/foo_input_vgmstre
 
 * Plays all [formats](https://vgmstream.org/formats) and [codecs](https://vgmstream.org/formats#supported-codec-types) supported by [vgmstream](https://vgmstream.org/).
 * Supports dark mode.
-
 * Compatible with foobar2000 1.6.14 and foobar2000 2.0 or later (32 and 64-bit version).
 
 ## Requirements

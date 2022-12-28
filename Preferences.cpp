@@ -1,3 +1,6 @@
+
+/** $VER: Preferences.cpp (2022.12.28) P. Stuer **/
+
 #include <stdio.h>
 #include <io.h>
 

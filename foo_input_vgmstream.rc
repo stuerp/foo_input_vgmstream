@@ -1,4 +1,7 @@
-#include "Resource.h"
+
+/** $VER: foo_input_vgmstream.rc (2022.12.28) P. Stuer **/
+
+#include "Resources.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
 #include <afxres.h>

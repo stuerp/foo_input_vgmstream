@@ -4,7 +4,7 @@
     <ClInclude Include="FileTypeRegistrar.h" />
     <ClInclude Include="Preferences.h" />
     <ClInclude Include="foo_input_vgmstream.h" />
-    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Resources.h" />
     <ClInclude Include="StreamFile.h" />
   </ItemGroup>
   <ItemGroup>

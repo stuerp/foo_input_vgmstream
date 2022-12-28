@@ -1,3 +1,6 @@
+
+/** $VER: foo_input_vgmstream.cpp (2022.12.28) P. Stuer **/
+
 #include <stdio.h>
 #include <io.h>
 
@@ -15,7 +18,7 @@ extern "C"
 #include "FileTypeRegistrar.h"
 #include "StreamFile.h"
 
-#include "Resource.h"
+#include "Resources.h"
 
 #pragma warning(push)
 #pragma warning(disable: 26447) // The function is declared 'noexcept' but calls function which may throw exceptions.

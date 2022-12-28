@@ -1,3 +1,6 @@
+
+/** $VER: Preferences.h (2022.12.28) P. Stuer **/
+
 #pragma once
 
 #include <foobar2000/helpers/foobar2000+atl.h>
@@ -5,7 +8,7 @@
 
 #include <coreDarkMode.h>
 
-#include "Resource.h"
+#include "Resources.h"
 
 #define DEFAULT_LOOP_COUNT "2.00"
 #define DEFAULT_FADE_SECONDS "10.00"

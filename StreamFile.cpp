@@ -1,3 +1,6 @@
+
+/** $VER: StreamFile.cpp (2022.12.28) P. Stuer **/
+
 #include <stdio.h>
 #include <io.h>
 
@@ -10,11 +13,11 @@ extern "C"
 }
 
 #include "foo_input_vgmstream.h"
-#include "Resource.h"
+#include "Resources.h"
 
 #pragma warning(disable: 26408 26438 26440 26446 26461 26482)
 
-// A STREAMFILE that operates via foobar's file service using a buffer
+// Implements a wrapper for a VGMStream STREAMFILE that operates via foobar2000's file service using a buffer.
 struct StreamFile
 {
     STREAMFILE vt;              /* callbacks */
