@@ -88,7 +88,7 @@ branch. Pull requests are warmly welcome.
 v1.1.0.0, 2023-01-13, *"Friday the 13th"*
 
 * Upgraded vgmstream to r1810.
-* 
+
 v1.0.0.0, 2022-12-27, *"Happy New Year"*
 
 * Added x86 version for [foobar2000](https://www.foobar2000.org/) v2.0.
