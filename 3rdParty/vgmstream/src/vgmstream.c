@@ -38,7 +38,6 @@ VGMSTREAM* (*init_vgmstream_functions[])(STREAMFILE* sf) = {
     init_vgmstream_gcsw,
     init_vgmstream_ads,
     init_vgmstream_nps,
-    init_vgmstream_rwsd,
     init_vgmstream_xa,
     init_vgmstream_rxws,
     init_vgmstream_ngc_dsp_stm,
@@ -384,7 +383,7 @@ VGMSTREAM* (*init_vgmstream_functions[])(STREAMFILE* sf) = {
     init_vgmstream_bnk_sony,
     init_vgmstream_nus3bank,
     init_vgmstream_nus3bank_encrypted,
-    init_vgmstream_scd_sscf,
+    init_vgmstream_sscf,
     init_vgmstream_dsp_sps_n1,
     init_vgmstream_dsp_itl_ch,
     init_vgmstream_a2m,
@@ -525,6 +524,7 @@ VGMSTREAM* (*init_vgmstream_functions[])(STREAMFILE* sf) = {
     init_vgmstream_sndz,
     init_vgmstream_vab,
     init_vgmstream_bigrp,
+    init_vgmstream_sscf_encrypted,
 
     /* lower priority metas (no clean header identity, somewhat ambiguous, or need extension/companion file to identify) */
     init_vgmstream_scd_pcm,
@@ -541,10 +541,10 @@ VGMSTREAM* (*init_vgmstream_functions[])(STREAMFILE* sf) = {
 
     /* lowest priority metas (should go after all metas, and TXTH should go before raw formats) */
     init_vgmstream_txth,            /* proper parsers should supersede TXTH, once added */
-    init_vgmstream_dtk,
+    init_vgmstream_dtk,             /* semi-raw GC streamed files */
     init_vgmstream_mpeg,            /* semi-raw MP3 */
-    init_vgmstream_encrypted,       /* encrypted stuff */
     init_vgmstream_btsnd,           /* semi-headerless */
+    init_vgmstream_encrypted,       /* encrypted stuff */
     init_vgmstream_raw_int,         /* .int raw PCM */
     init_vgmstream_ps_headerless,   /* tries to detect a bunch of PS-ADPCM formats */
     init_vgmstream_raw_snds,        /* .snds raw SNDS IMA */
@@ -559,6 +559,7 @@ VGMSTREAM* (*init_vgmstream_functions[])(STREAMFILE* sf) = {
     init_vgmstream_ps2_adm,         /* weird non-constant PSX blocks */
     init_vgmstream_baf_badrip,      /* crap, to be removed */
     init_vgmstream_rxws_badrip,     /* crap, to be removed */
+    init_vgmstream_rwsd,            /* crap, to be removed */
 #ifdef VGM_USE_FFMPEG
     init_vgmstream_ffmpeg,          /* may play anything incorrectly, since FFmpeg doesn't check extensions */
 #endif

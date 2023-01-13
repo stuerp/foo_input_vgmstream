@@ -266,9 +266,6 @@
     <ClInclude Include="coding\hca_decoder_clhca.h">
       <Filter>coding\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="coding\mpeg_bitreader.h">
-      <Filter>coding\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="coding\mpeg_decoder.h">
       <Filter>coding\Header Files</Filter>
     </ClInclude>
@@ -326,7 +323,25 @@
     <ClInclude Include="coding\ice_decoder_icelib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="coding\mpeg_bitreader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="util\miniz.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="meta\ahx_keys.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="meta\sscf_encrypted.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="coding\at3plus_decoder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\cri_keys.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\bitstream_msb.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -2008,7 +2023,13 @@
     <ClCompile Include="meta\vab.c">
       <Filter>meta\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="meta\sqex_scd_sscf.c">
+    <ClCompile Include="meta\sscf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="meta\sscf_encrypted.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\cri_keys.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

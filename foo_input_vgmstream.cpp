@@ -612,12 +612,15 @@ static input_factory_t<InputHandler> _InputHandler;
 
 #pragma warning(push)
 #pragma warning(disable: 4265 4625 4626 5026 5027 26433 26436 26455)
-DECLARE_COMPONENT_VERSION(STR_COMPONENT_NAME, STR_COMPONENT_VERSION,
+DECLARE_COMPONENT_VERSION
+(
+    STR_COMPONENT_NAME,
+    STR_COMPONENT_VERSION,
     STR_COMPONENT_FILENAME " " STR_COMPONENT_VERSION "\n"
     "\n"
     "Adds playback of streamed (prerecorded) video game audio.\n"
     "\n"
-    "Build with foobar2000 SDK " TOSTRING(FOOBAR2000_SDK_VERSION) "\n"
+    "Built with foobar2000 SDK " TOSTRING(FOOBAR2000_SDK_VERSION) "\n"
     "on " __DATE__ " " __TIME__ "\n"
     "\n"
     "Using vgmstream " VGMSTREAM_VERSION "\n"

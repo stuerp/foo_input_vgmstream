@@ -1,5 +1,5 @@
 
-/** $VER: Resources.h (2022.12.28) P. Stuer **/
+/** $VER: Resources.h (2023.01.13) P. Stuer **/
 
 #pragma once
 
@@ -17,19 +17,19 @@
 #define STR_COMPANY_NAME        TEXT("")
 #define STR_INTERNAL_NAME       TEXT(STR_COMPONENT_NAME)
 #define STR_COMMENTS            TEXT("Written by Christopher Snowhill, Peter Stuer")
-#define STR_COPYRIGHT           TEXT("Copyright (c) 2012-2022. All rights reserved.")
+#define STR_COPYRIGHT           TEXT("Copyright (c) 2012-2023. All rights reserved.")
 
 #define NUM_FILE_MAJOR          1
-#define NUM_FILE_MINOR          0
+#define NUM_FILE_MINOR          1
 #define NUM_FILE_PATCH          0
-#define NUM_FILE_PRERELEASE     1
+#define NUM_FILE_PRERELEASE     0
 
 #define STR_FILE_NAME           TEXT(STR_COMPONENT_FILENAME)
 #define STR_FILE_VERSION        TOSTRING(NUM_FILE_MAJOR) TEXT(".") TOSTRING(NUM_FILE_MINOR) TEXT(".") TOSTRING(NUM_FILE_PATCH) TEXT(".") TOSTRING(NUM_FILE_PRERELEASE)
 #define STR_FILE_DESCRIPTION    TEXT("A foobar2000 component that implements playback of streamed (prerecorded) video game audio")
 
 #define NUM_PRODUCT_MAJOR       1
-#define NUM_PRODUCT_MINOR       0
+#define NUM_PRODUCT_MINOR       1
 #define NUM_PRODUCT_PATCH       0
 #define NUM_PRODUCT_PRERELEASE  0
 

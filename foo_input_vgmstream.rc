@@ -55,8 +55,8 @@ fileflags       VS_FF_DEBUG
 fileflags       0
 #endif
 fileos          VOS_NT_WINDOWS32
-filetype        VFT_APP
-filesubtype     0x0L
+filetype        VFT_DLL
+filesubtype     VFT2_UNKNOWN
 {
     block "StringFileInfo"
     {

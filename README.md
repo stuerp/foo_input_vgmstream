@@ -32,9 +32,12 @@ The code builds out-of-the box with Visual Studio.
 To build the code you need:
 
 * [Microsoft Visual Studio 2022 Community Edition](https://visualstudio.microsoft.com/downloads/) or later
-* [foobar2000 SDK](https://www.foobar2000.org/SDK) 2022-20-20
+* [foobar2000 SDK](https://www.foobar2000.org/SDK) 2022-10-20
 * [Windows Template Library (WTL)](https://github.com/Win32-WTL/WTL) 10.0.10320
-* [vgmstream](https://github.com/vgmstream/vgmstream) r1800
+
+The following libraries are included in the code:
+
+* [vgmstream](https://github.com/vgmstream/vgmstream) r1810
 * [ffmpeg](https://vcpkg.io/en/packages.html) 4.4.1 built with [vcpkg](https://vcpkg.io/en/index.html)
 * [mpg123](https://www.mpg123.de/download.shtml) 1.31.0
 * [libatrac9](https://github.com/Thealexbarney/Libatrac9/)
@@ -82,6 +85,10 @@ branch. Pull requests are warmly welcome.
 
 ## Change Log
 
+v1.1.0.0, 2023-01-13, *"Friday the 13th"*
+
+* Upgraded vgmstream to r1810.
+* 
 v1.0.0.0, 2022-12-27, *"Happy New Year"*
 
 * Added x86 version for [foobar2000](https://www.foobar2000.org/) v2.0.
@@ -105,6 +112,9 @@ v0.1.0.0, 2022-12-19, *"Scratchin' the itch"*
 * [kode54](https://gitlab.com/kode54), for the original [foo_input_vgmstream](https://gitlab.com/kode54/vgmstream) component.
 
 ## Reference Material
+
+* foobar2000
+  * [foobar2000 Development](https://wiki.hydrogenaud.io/index.php?title=Foobar2000:Development:Overview)
 
 * vgmstream [documentation](https://vgmstream.org/)
 

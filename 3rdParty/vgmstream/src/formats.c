@@ -31,6 +31,7 @@ static const char* extension_list[] = {
     "800",
     "9tav",
 
+    "a3c", //txth/reserved [Puyo Puyo 20th Anniversary (PSP)]
     //"aac", //common
     "aa3", //FFmpeg/not parsed (ATRAC3/ATRAC3PLUS/MP3/LPCM/WMA)
     "aax",
@@ -56,7 +57,6 @@ static const char* extension_list[] = {
     "ahv",
     "ai",
     //"aif", //common
-    "aif-Loop",
     "aifc", //common?
     //"aiff", //common
     "aix",
@@ -97,6 +97,7 @@ static const char* extension_list[] = {
     "bar",
     "bcstm",
     "bcwav",
+    "bcv", //txth/reserved [The Bigs (PSP)]
     "bd3",
     "bdsp",
     "bfstm",
@@ -649,6 +650,7 @@ static const char* extension_list[] = {
     "xen",
     "xma",
     "xma2",
+    "xms",
     "xmu",
     "xmv",
     "xnb",
@@ -997,7 +999,6 @@ static const meta_info meta_info_list[] = {
         {meta_DSP_MSS,              "Double DSP header stereo by .mss extension"},
         {meta_DSP_GCM,              "Double DSP header stereo by .gcm extension"},
         {meta_IDSP_TT,              "Traveller's Tales IDSP header"},
-        {meta_RSTM_SPM,             "Nintendo RSTM header (brstmspm)"},
         {meta_RAW_PCM,              "PC .raw raw header"},
         {meta_PS2_VAGi,             "Sony VAGi header"},
         {meta_PS2_VAGp,             "Sony VAGp header"},
@@ -1121,7 +1122,6 @@ static const meta_info meta_info_list[] = {
         {meta_PS2_P2BT,             "Pop'n'Music 7 Header"},
         {meta_PS2_GBTS,             "Pop'n'Music 9 Header"},
         {meta_NGC_DSP_IADP,         "IADP Header"},
-        {meta_RSTM_shrunken,        "Nintendo RSTM header, corrupted by Atlus"},
         {meta_RIFF_WAVE_MWV,        "RIFF WAVE header with .mwv flavoring"},
         {meta_FFCC_STR,             "Final Fantasy: Crystal Chronicles STR header"},
         {meta_SAT_BAKA,             "Konami BAKA header"},
@@ -1318,7 +1318,7 @@ static const meta_info meta_info_list[] = {
         {meta_WAVEBATCH,            "Firebrand Games WBAT header"},
         {meta_HD3_BD3,              "Sony HD3+BD3 header"},
         {meta_BNK_SONY,             "Sony BNK header"},
-        {meta_SCD_SSCF,             "Square-Enix SCD (SSCF) header"},
+        {meta_SSCF,                 "Square-Enix SSCF header"},
         {meta_DSP_VAG,              ".VAG DSP header"},
         {meta_DSP_ITL,              ".ITL DSP header"},
         {meta_A2M,                  "Artificial Mind & Movement A2M header"},

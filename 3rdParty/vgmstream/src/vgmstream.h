@@ -325,9 +325,7 @@ typedef enum {
     meta_RWAV,              /* contents of RWAR */
     meta_CWAV,              /* contents of CWAR */
     meta_FWAV,              /* contents of FWAR */
-    meta_RSTM_SPM,          /* RSTM with 44->22khz hack */
     meta_THP,               /* THP movie files */
-    meta_RSTM_shrunken,     /* Atlus' mutant shortened RSTM */
     meta_SWAV,
     meta_NDS_RRDS,          /* Ridge Racer DS */
     meta_WII_BNS,           /* Wii BNS Banner Sound (similar to RSTM) */
@@ -665,7 +663,7 @@ typedef enum {
     meta_WAVEBATCH,         /* Firebrand Games */
     meta_HD3_BD3,           /* Sony PS3 bank */
     meta_BNK_SONY,          /* Sony Scream Tool bank */
-    meta_SCD_SSCF,          /* Square Enix SCD old version */
+    meta_SSCF,
     meta_DSP_VAG,           /* Penny-Punching Princess (Switch) sfx */
     meta_DSP_ITL,           /* Charinko Hero (GC) */
     meta_A2M,               /* Scooby-Doo! Unmasked (PS2) */

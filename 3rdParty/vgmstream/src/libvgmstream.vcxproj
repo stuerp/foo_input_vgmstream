@@ -151,6 +151,7 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="coding\at3plus_decoder.h" />
     <ClInclude Include="coding\hca_decoder_clhca.h" />
     <ClInclude Include="coding\ice_decoder_icelib.h" />
     <ClInclude Include="coding\mpeg_bitreader.h" />
@@ -159,6 +160,8 @@
     <ClInclude Include="coding\vorbis_custom_data_fsb.h" />
     <ClInclude Include="coding\vorbis_custom_data_wwise.h" />
     <ClInclude Include="coding\vorbis_custom_decoder.h" />
+    <ClInclude Include="meta\ahx_keys.h" />
+    <ClInclude Include="meta\sscf_encrypted.h" />
     <ClInclude Include="meta\xvag_streamfile.h" />
     <ClInclude Include="meta\xwb_xsb.h" />
     <ClInclude Include="meta\xwma_konami_streamfile.h" />
@@ -170,6 +173,8 @@
     <ClInclude Include="streamfile.h" />
     <ClInclude Include="streamtypes.h" />
     <ClInclude Include="util.h" />
+    <ClInclude Include="util\bitstream_msb.h" />
+    <ClInclude Include="util\cri_keys.h" />
     <ClInclude Include="vgmstream.h" />
     <ClInclude Include="meta\adx_keys.h" />
     <ClInclude Include="meta\aax_utf.h" />
@@ -319,7 +324,8 @@
     <ClCompile Include="meta\spm.c" />
     <ClCompile Include="meta\rad.c" />
     <ClCompile Include="meta\sbk.c" />
-    <ClCompile Include="meta\sqex_scd_sscf.c" />
+    <ClCompile Include="meta\sscf.c" />
+    <ClCompile Include="meta\sscf_encrypted.c" />
     <ClCompile Include="meta\sspf.c" />
     <ClCompile Include="meta\tgc.c" />
     <ClCompile Include="meta\vab.c" />
@@ -360,6 +366,7 @@
     <ClCompile Include="streamfile.c" />
     <ClCompile Include="coding\tgcadpcm_decoder.c" />
     <ClCompile Include="util.c" />
+    <ClCompile Include="util\cri_keys.c" />
     <ClCompile Include="vgmstream.c" />
     <ClCompile Include="meta\208.c" />
     <ClCompile Include="meta\9tav.c" />
