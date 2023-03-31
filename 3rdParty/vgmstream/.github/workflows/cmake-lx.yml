@@ -10,10 +10,6 @@ env:
 
 jobs:
   build:
-    # The CMake configure and build commands are platform agnostic and should work equally
-    # well on Windows or Mac.  You can convert this to a matrix build if you need
-    # cross-platform coverage.
-    # See: https://docs.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow#configuring-a-build-matrix
     name: CMake, Ubuntu
     runs-on: ubuntu-latest
 
@@ -128,24 +124,37 @@ jobs:
     #      path: ${{runner.workspace}}/build/audacious/vgmstream.so
     #      name: vgmstream-audacious
 
-    - name: Upload artifacts to S3
-      if: github.event_name != 'pull_request'
-      working-directory: ${{runner.workspace}}/build
+    # uploads current assets to vgmstream-releases (token only works on merges)
+    - name: Upload artifacts to nightly
+      if: github.event_name != 'pull_request' 
       shell: bash
       env:
-          AWS_DEFAULT_REGION: us-west-1
-          AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
-          AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-      # TODO: Add vgmstream123 to the archive and upload the Audacious plugin when it is supported
+        UPLOADER_GITHUB_TOKEN: ${{ secrets.UPLOADER_GITHUB_TOKEN }}
+      # tar cvfz vgmstream-linux-123.tar.gz -C ./build/cli vgmstream123
+      # tar cvfz vgmstream-linux-audacious.tar.gz -C ./build/audacious vgmstream.so
       run: |
-        cd cli
-        tar cvfz vgmstream-cli.tar.gz vgmstream-cli
-        cd ..
-        aws s3 cp cli/vgmstream-cli.tar.gz s3://vgmstream-builds/${{github.sha}}/linux/vgmstream-cli.tar.gz --acl public-read
-        cd ${{runner.workspace}}
-        echo ${{github.sha}} | tee latest_id_lx
-        aws s3 cp latest_id_lx s3://vgmstream-builds/ --acl public-read
-      # cd audacious
-      # tar cvfz vgmstream-audacious.tar.gz vgmstream.so
-      # cd ..
-      # aws s3 cp audacious/vgmstream-audacious.tar.gz s3://vgmstream-builds/${{github.sha}}/linux/vgmstream-audacious.tar.gz --acl public-read
+        tar cvfz ${{runner.workspace}}/vgmstream-linux-cli.tar.gz -C ${{runner.workspace}}/build/cli vgmstream-cli
+        python ${{github.workspace}}/.github/uploader.py ${{runner.workspace}}/vgmstream-linux-cli.tar.gz
+
+
+    #- name: Upload artifacts to S3
+    #  if: github.event_name != 'pull_request'
+    #  working-directory: ${{runner.workspace}}/build
+    #  shell: bash
+    #  env:
+    #      AWS_DEFAULT_REGION: us-west-1
+    #      AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+    #      AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+    #  # TODO: Add vgmstream123 to the archive and upload the Audacious plugin when it is supported
+    #  run: |
+    #    cd cli
+    #    tar cvfz vgmstream-linux-cli.tar.gz vgmstream-cli
+    #    cd ..
+    #    aws s3 cp cli/vgmstream-linux-cli.tar.gz s3://vgmstream-builds/${{github.sha}}/linux/vgmstream-linux-cli.tar.gz --acl public-read
+    #    cd ${{runner.workspace}}
+    #    echo ${{github.sha}} | tee latest_id_lx
+    #    aws s3 cp latest_id_lx s3://vgmstream-builds/ --acl public-read
+    #  # cd audacious
+    #  # tar cvfz vgmstream-audacious.tar.gz vgmstream.so
+    #  # cd ..
+    #  # aws s3 cp audacious/vgmstream-audacious.tar.gz s3://vgmstream-builds/${{github.sha}}/linux/vgmstream-audacious.tar.gz --acl public-read

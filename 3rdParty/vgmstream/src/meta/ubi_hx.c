@@ -250,8 +250,8 @@ static int parse_header(ubi_hx_header* hx, STREAMFILE* sf, uint32_t offset, uint
     read_u32_t read_u32 = hx->big_endian ? read_u32be : read_u32le;
     read_s32_t read_s32 = hx->big_endian ? read_s32be : read_s32le;
     read_u16_t read_u16 = hx->big_endian ? read_u16be : read_u16le;
-    off_t riff_offset, riff_size, chunk_offset, stream_adjust = 0, resource_size;
-    size_t chunk_size;
+    uint32_t riff_offset, riff_size, stream_adjust = 0, resource_size, chunk_size;
+    off_t chunk_offset;
     int cue_flag = 0;
 
     //todo cleanup/unify common readings
@@ -339,7 +339,7 @@ static int parse_header(ubi_hx_header* hx, STREAMFILE* sf, uint32_t offset, uint
                 break;
 
             default:
-                VGM_LOG("ubi hx: unknown stream mode %x\n", hx->stream_mode);
+                VGM_LOG("ubi hx: unknown wave mode %x\n", hx->stream_mode);
                 goto fail;
         }
 
@@ -423,14 +423,28 @@ static int parse_header(ubi_hx_header* hx, STREAMFILE* sf, uint32_t offset, uint
         if ((strcmp(hx->class_name, "CXBoxStaticHWWaveFileIdObj") == 0 ||
              strcmp(hx->class_name, "CXBoxStreamHWWaveFileIdObj") == 0) && !hx->big_endian) {
             /* micro header: some mix of channels + block size + sample rate + flags, unsure of which bits */
-            hx->codec       = XIMA;
+            
             /* 0x00: ? */
-            hx->channels    = read_u8(offset + 0x01, sf); /* upper 2 bits? */
-            switch(hx->channels) { 
-                case 0x48: hx->channels = 1; break;
-                case 0x90: hx->channels = 2; break;
+            uint8_t flags    = read_u8(offset + 0x01, sf);
+            switch(flags) { 
+                case 0x05: // b00000101 /* XIII (Xbox)-beta 2002-12 */
+                    hx->channels = 1;
+                    hx->codec = PCM;
+                    break;
+                case 0x09: // b00001001 /* XIII (Xbox)-beta 2002-12 */
+                    hx->channels = 2;
+                    hx->codec = PCM;
+                    break;
+                case 0x48: // b01001000
+                    hx->channels = 1;
+                    hx->codec = XIMA;
+                    break;
+                case 0x90: // b10010000
+                    hx->channels = 2;
+                    hx->codec = XIMA;
+                    break;
                 default:
-                    VGM_LOG("ubi hx: channel type %x\n", hx->channels);
+                    VGM_LOG("ubi hx: channel flags %x\n", flags);
                     goto fail;
             }
             hx->sample_rate = (read_u16(offset + 0x02, sf) & 0x7FFFu) << 1u;  /* ??? */
@@ -473,6 +487,7 @@ static int parse_header(ubi_hx_header* hx, STREAMFILE* sf, uint32_t offset, uint
 
         switch(hx->stream_mode) {
             case 0x00: /* static (smaller internal file) [XIII (Xbox)] */
+            case 0x02: /* static (smaller internal file) [XIII-beta (Xbox)] */
                 hx->stream_offset += offset;
                 break;
 
@@ -745,14 +760,9 @@ static VGMSTREAM* init_vgmstream_ubi_hx_header(ubi_hx_header* hx, STREAMFILE* sf
 
 #ifdef VGM_USE_FFMPEG
         case XMA2: {
-            int bytes, block_count, block_size;
-            uint8_t buf[0x200];
+            int block_size = 0x800;
 
-            block_size = 0x800;
-            block_count = hx->stream_size / block_size;
-
-            bytes = ffmpeg_make_riff_xma2(buf,0x200, hx->num_samples, hx->stream_size, hx->channels, hx->sample_rate, block_count, block_size);
-            vgmstream->codec_data = init_ffmpeg_header_offset(sb, buf,bytes, hx->stream_offset,hx->stream_size);
+            vgmstream->codec_data = init_ffmpeg_xma2_raw(sb, hx->stream_offset, hx->stream_size, hx->num_samples, hx->channels, hx->sample_rate, block_size, 0);
             if (!vgmstream->codec_data) goto fail;
             vgmstream->coding_type = coding_FFmpeg;
             vgmstream->layout_type = layout_none;

@@ -11,9 +11,6 @@ set(EXT_HEADERS
 file(GLOB MAIN_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/*.h")
 file(GLOB MAIN_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.c")
 
-# stack_allow.h is not being used, so no need to include it in the sources
-list(REMOVE_ITEM MAIN_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/stack_alloc.h)
-
 # Setup source groups, mainly for Visual Studio
 source_group("Header Files\\coding" FILES ${CODING_HEADERS})
 source_group("Header Files\\layout" FILES ${LAYOUT_HEADERS})
@@ -74,4 +71,8 @@ if(NOT EMSCRIPTEN)
 	setup_target(libvgmstream_shared TRUE)
 	
 	target_include_directories(libvgmstream_shared PRIVATE ${libvgmstream_includes})
+	
+	if(CMAKE_CXX_COMPILER_ID MATCHES Clang OR CMAKE_CXX_COMPILER_ID MATCHES GNU)
+		set_target_properties(libvgmstream_shared PROPERTIES LINK_FLAGS_RELEASE -s)
+	endif()
 endif()

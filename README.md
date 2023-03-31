@@ -37,7 +37,7 @@ To build the code you need:
 
 The following libraries are included in the code:
 
-* [vgmstream](https://github.com/vgmstream/vgmstream) r1810
+* [vgmstream](https://github.com/vgmstream/vgmstream) r1831
 * [ffmpeg](https://vcpkg.io/en/packages.html) 4.4.1 built with [vcpkg](https://vcpkg.io/en/index.html)
 * [mpg123](https://www.mpg123.de/download.shtml) 1.31.0
 * [libatrac9](https://github.com/Thealexbarney/Libatrac9/)
@@ -85,10 +85,14 @@ branch. Pull requests are warmly welcome.
 
 ## Change Log
 
+v1.2.0.0, 2023-03-31, *"Just for Me"*
+
+* Upgraded vgmstream to r1831.
+
 v1.1.0.0, 2023-01-13, *"Friday the 13th"*
 
 * Upgraded vgmstream to r1810.
-* 
+
 v1.0.0.0, 2022-12-27, *"Happy New Year"*
 
 * Added x86 version for [foobar2000](https://www.foobar2000.org/) v2.0.

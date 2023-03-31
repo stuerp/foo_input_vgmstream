@@ -1,6 +1,8 @@
+# github workflow to automate builds
+
 name: macOS build
 
-on: [push, pull_request]
+on: [push, pull_request, workflow_dispatch]
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
@@ -10,13 +12,14 @@ jobs:
   build:
     name: CMake, macOS
     runs-on: macos-latest
+
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
       - name: Install dependencies
-        run: brew install autoconf automake cmake ffmpeg jansson libao libvorbis mpg123
+        run: brew install autoconf automake cmake pkgconfig ffmpeg jansson libao libvorbis mpg123
 
       - name: Cache celt
         uses: actions/cache@v3
@@ -51,3 +54,14 @@ jobs:
         with:
           path: ${{ github.workspace }}/build/cli/vgmstream-cli
           name: vgmstream-mac
+
+      # uploads current assets to vgmstream-releases (token only works on merges)
+      - name: Upload artifacts to vgmstream-releases
+        if: github.event_name != 'pull_request' 
+        working-directory: ${{github.workspace}}
+        shell: bash
+        env:
+          UPLOADER_GITHUB_TOKEN: ${{ secrets.UPLOADER_GITHUB_TOKEN }}
+        run: |
+          tar cvfz vgmstream-mac-cli.tar.gz -C ./build/cli vgmstream-cli
+          python3 .github/uploader.py vgmstream-mac-cli.tar.gz

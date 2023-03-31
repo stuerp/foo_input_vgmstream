@@ -3,7 +3,7 @@
 extern "C" {
 #endif
 
-#ifndef WIN32
+#ifdef NOWIN32
 #ifdef COMPILING_DLL 
 #define DLLEXPORT __declspec(dllexport)
 #else

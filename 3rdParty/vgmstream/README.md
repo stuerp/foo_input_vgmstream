@@ -18,7 +18,8 @@ Some of vgmstream's features:
 
 The main development repository: https://github.com/vgmstream/vgmstream/
 
-Automated builds with the latest changes: https://dl.vgmstream.org
+Automated builds with the latest changes: https://vgmstream.org
+(https://github.com/vgmstream/vgmstream-releases/releases/tag/nightly)
 
 Common releases: https://github.com/vgmstream/vgmstream/releases
 
@@ -28,7 +29,7 @@ More documentation: https://github.com/vgmstream/vgmstream/tree/master/doc
 
 ## Getting vgmstream
 There are multiple end-user components:
-- [test.exe/vgmstream-cli](doc/USAGE.md#testexevgmstream-cli-command-line-decoder): A command-line decoder.
+- [vgmstream-cli](doc/USAGE.md#testexevgmstream-cli-command-line-decoder): A command-line decoder.
 - [in_vgmstream](doc/USAGE.md#in_vgmstream-winamp-plugin): A Winamp plugin.
 - [foo_input_vgmstream](doc/USAGE.md#foo_input_vgmstream-foobar2000-plugin): A foobar2000 component.
 - [xmp-vgmstream](doc/USAGE.md#xmp-vgmstream-xmplay-plugin): An XMPlay plugin.
@@ -38,7 +39,7 @@ There are multiple end-user components:
 The main library (plain *vgmstream*) is the code that handles the internal conversion, while the
 above components are what you use to get sound.
 
-If you just want to convert game audio to `.wav`, easiest would be getting *test.exe/vgmstream-cli* (see
+If you just want to convert game audio to `.wav`, easiest would be getting *vgmstream-cli* (see
 below) then drag-and-drop one or more files to the executable. This should create `(file.extension).wav`,
 if the format is supported. More usable would be installing a music player like *foobar2000* (for
 Windows) or *Audacious* (for Linux) then the appropriate component, so you can listen to VGM without
@@ -56,7 +57,7 @@ Note vgmstream cannot *encode* (convert from `.wav` to some video game format), 
 You should get `vgmstream-win.zip`, which also bundles various components, or
 `foo_input_vgmstream.fb2k-component` for the installable foobar2000 plugin from the
 latest prebuilt binaries on our website:
-- https://dl.vgmstream.org
+- https://vgmstream.org
 
 You can also get them from the less frequently updated releases on GitHub:
 - https://github.com/vgmstream/vgmstream/releases
@@ -71,7 +72,7 @@ If you prefer, you may compile the components from source as well, see the
 ### Linux
 For convenience, releases distribute a command-line decoder in `vgmstream-cli.zip`. It is
 statically linked and should work on all systems running Linux kernel v3.2 and above.
-- https://dl.vgmstream.org
+- https://vgmstream.org
 - https://github.com/vgmstream/vgmstream/releases
 
 Building from source will also give you *vgmstream.so*, an Audacious plugin, and *vgmstream123*,

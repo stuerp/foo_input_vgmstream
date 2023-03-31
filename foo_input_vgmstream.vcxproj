@@ -38,6 +38,7 @@
     </SccLocalPath>
     <SccProvider>
     </SccProvider>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -121,6 +122,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <SDLCheck>true</SDLCheck>
       <DisableSpecificWarnings>4710;4711;4820;5045;26481;26485;26493</DisableSpecificWarnings>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalDependencies>../sdk/foobar2000/shared/shared-$(Platform).lib;3rdParty/External-x86/avcodec.lib;3rdParty/External-x86/avformat.lib;3rdParty/External-x86/avutil.lib;3rdParty/External-x86/swresample.lib;3rdParty/External-x86/libmpg123-0.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -152,6 +154,7 @@
       <DisableSpecificWarnings>4710;4711;4820;5045;26481;26485;26493</DisableSpecificWarnings>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <SDLCheck>true</SDLCheck>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalDependencies>../sdk/foobar2000/shared/shared-$(Platform).lib;3rdParty/External-x64/avcodec.lib;3rdParty/External-x64/avformat.lib;3rdParty/External-x64/avutil.lib;3rdParty/External-x64/swresample.lib;3rdParty/External-x64/libmpg123-0.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -184,6 +187,7 @@
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <DisableAnalyzeExternal>true</DisableAnalyzeExternal>
       <DisableSpecificWarnings>4710;4711;4820;5045;26481;26485;26493</DisableSpecificWarnings>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalDependencies>../sdk/foobar2000/shared/shared-$(Platform).lib;3rdParty/External-x86/avcodec.lib;3rdParty/External-x86/avformat.lib;3rdParty/External-x86/avutil.lib;3rdParty/External-x86/swresample.lib;3rdParty/External-x86/libmpg123-0.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -225,6 +229,7 @@
       <OmitFramePointers>true</OmitFramePointers>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalDependencies>../sdk/foobar2000/shared/shared-$(Platform).lib;3rdParty/External-x64/avcodec.lib;3rdParty/External-x64/avformat.lib;3rdParty/External-x64/avutil.lib;3rdParty/External-x64/swresample.lib;3rdParty/External-x64/libmpg123-0.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -248,6 +253,16 @@
       <Command>pwsh.exe -NoLogo -NonInteractive -NoProfile -File Build-FB2KComponent.ps1 $(TargetName) $(TargetFileName) $(Platform) $(OutputPath)</Command>
       <Message>Creating component archive...</Message>
     </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|x64'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="FileTypeRegistrar.h" />
